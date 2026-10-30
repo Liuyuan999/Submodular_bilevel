@@ -8,26 +8,21 @@ machine-specific setup, or external checkout is needed to inspect the results.
 
 ```text
 supp_eda/
-├── constrained/scripts/       ISPD98 ibm01 runner, model, baselines, plotting
-├── unconstrained/scripts/     Shared ibm01 graph model and data loader
-├── data/                      ibm01 hypergraph, coordinates, reference labels
-├── results/
-│   ├── final/                 ibm01 comparison results
-│   └── ablations/             ibm01 K, gamma, and rho studies
-├── figures/                   ibm01 PDF figures and tabular summaries
+├── ibm/
+│   ├── constrained/scripts/   ibm01 runner, model, baselines, plotting
+│   ├── unconstrained/scripts/ shared ibm01 graph model and data loader
+│   ├── data/                  ibm01 hypergraph, coordinates, reference labels
+│   ├── results/               main results and ablation archive
+│   └── figures/               ibm01 PDF figures and summary tables
 ├── dreamplace/
 │   ├── *.py                   MMS preprocessing, BiGAP, baselines, reporting
 │   ├── data/                  Prepared adaptec1 instance and provenance
-│   ├── results/
-│   │   ├── dreamplace_adaptec1_v1/             300 s original comparison
-│   │   ├── dreamplace_adaptec1_gamma_yf_v1/     300 s gamma sweep
-│   │   ├── dreamplace_adaptec1_confirm_50s_v1/  50 s held-out confirmation
-│   │   └── dreamplace_adaptec1_300s_feasible/   Filtered comparison summary
+│   ├── results_bundle.tar.gz  50 s and 300 s audits and summaries
 │   └── figures/               50 s and 300 s comparisons, gamma ablations
 ├── openroad/
 │   ├── *.py                   RC model, exact cuts, BiGAP, baselines, reporting
 │   ├── data/                  GCD instance and independent verification
-│   ├── results/comparison_300s/ 80 audited runs across methods and gamma
+│   ├── results_bundle.tar.gz  80 audited runs across methods and gamma
 │   └── figures/               Comparison figures for each gamma
 ├── tests/                     Oracle, gradient, update, and reporting tests
 ├── reproduce.py               Figure regeneration and test entry point
@@ -78,7 +73,7 @@ by the person running them, not inferred from missing host metadata.
 | DREAMPlace MMS adaptec1 | gamma=0.5, K=3, eta=5e-5, rho=0.05, dual steps=0.1, M=1 | Paired F response selected by minimum observed g-response Hamming loss |
 | OpenROAD GCD RC sizing | gamma=100, eta=10, rho=0.05, M=1; exact unconstrained cuts | Best-so-far value-gap penalty; BiGAP F response, baseline g response |
 
-See [ibm01](constrained/README.md), [DREAMPlace](dreamplace/README.md), and
+See [ibm01](ibm/README.md), [DREAMPlace](dreamplace/README.md), and
 [OpenROAD](openroad/README.md) for protocols and reproduction commands.
 Scores are benchmark-specific and not comparable across the three problems.
 
@@ -97,6 +92,13 @@ coordinates needed for domain filtering and output selection. These exports
 reproduce plots and statistics but cannot independently re-audit omitted label
 vectors. Fresh training writes full auditable logs. Archived source hashes
 describe the original runs; `MANIFEST.sha256` describes this reorganized release.
+
+All ibm01 material is collected under `ibm/`. Per-run studies are grouped in
+archives to reduce file clutter. Inspect an archive with
+`tar -tzf dreamplace/results_bundle.tar.gz`. DREAMPlace keeps the coordinates needed for
+domain filtering and output selection; binary label snapshots and solver states
+are omitted, so archived exports reproduce plots and summary metrics but cannot
+independently re-audit labels.
 
 Figures are PDF only. Caches, environments, downloads, generated reruns, and
 scheduler logs are excluded by `.gitignore`. No code license is assigned by
