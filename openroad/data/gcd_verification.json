@@ -1,0 +1,135 @@
+{
+  "status": "passed",
+  "source_checksums": {
+    "gcd_nangate45.def": {
+      "sha256": "5eb7b2197a635df30ea97871b6b69cb5d64da919de8fb898b53bf8cf89bdeb66",
+      "bytes": 300205,
+      "url": "https://github.com/The-OpenROAD-Project/OpenROAD/blob/7678d51077daa1ae82fbe799e096282f9d3dcaad/test/gcd_nangate45.def"
+    },
+    "gcd_nangate45.v": {
+      "sha256": "a7ac54960562b5bcc012efe899a059b4cc22fda89f64c36da7f14305e1d945f3",
+      "bytes": 34826,
+      "url": "https://github.com/The-OpenROAD-Project/OpenROAD/blob/7678d51077daa1ae82fbe799e096282f9d3dcaad/test/gcd_nangate45.v"
+    },
+    "Nangate45.lef": {
+      "sha256": "caa4e9b45e081f93720ce2c4d581497321ddc6fbcb1ffe1b384e324bbd5d43a7",
+      "bytes": 275414,
+      "url": "https://github.com/The-OpenROAD-Project/OpenROAD/blob/7678d51077daa1ae82fbe799e096282f9d3dcaad/test/Nangate45/Nangate45.lef"
+    },
+    "Nangate45_typ.lib": {
+      "sha256": "2efd0b32eb580e4e60e72fc0575bb3bc69aac907c91d908442e4ae6d7fe55895",
+      "bytes": 6691483,
+      "url": "https://github.com/The-OpenROAD-Project/OpenROAD/blob/7678d51077daa1ae82fbe799e096282f9d3dcaad/test/Nangate45/Nangate45_typ.lib"
+    }
+  },
+  "source_reconstruction": "matches_prepared_instance",
+  "selected_cells": 295,
+  "continuous_dimension": 590,
+  "assumptions": {
+    "A1": {
+      "status": "verified_for_declared_model",
+      "domain": "compact nonempty placement box",
+      "extension": "smooth LSE and square-root RC lengths on all real coordinates"
+    },
+    "A2": {
+      "status": "verified_for_declared_model",
+      "beta": 0.0,
+      "scope": "all placements, not just sampled queries",
+      "lower_max_positive_pair": 0.0,
+      "upper_max_positive_pair": 0.0,
+      "strictly_negative_lower_pairs": 277,
+      "pair_count": 277
+    },
+    "A3": {
+      "status": "vacuous_unconstrained_follower",
+      "constraint_count": 0,
+      "multipliers": "empty vectors; exact binary graph cuts replace dual iterations"
+    },
+    "A4": {
+      "status": "not_verified",
+      "claim": "no A4-dependent convergence claim"
+    }
+  },
+  "independent_MILP_checks": [
+    {
+      "query": 0,
+      "gamma": 0.1,
+      "g_value_error": 0.0,
+      "F_value_error": 0.0,
+      "g_milp_gap": 0.0,
+      "F_milp_gap": 0.0
+    },
+    {
+      "query": 0,
+      "gamma": 1.0,
+      "g_value_error": 0.0,
+      "F_value_error": 0.0,
+      "g_milp_gap": 0.0,
+      "F_milp_gap": 0.0
+    },
+    {
+      "query": 0,
+      "gamma": 50.0,
+      "g_value_error": 0.0,
+      "F_value_error": 0.0,
+      "g_milp_gap": 0.0,
+      "F_milp_gap": 0.0
+    },
+    {
+      "query": 1,
+      "gamma": 0.1,
+      "g_value_error": 0.0,
+      "F_value_error": 0.0,
+      "g_milp_gap": 0.0,
+      "F_milp_gap": 0.0
+    },
+    {
+      "query": 1,
+      "gamma": 1.0,
+      "g_value_error": 0.0,
+      "F_value_error": 0.0,
+      "g_milp_gap": 0.0,
+      "F_milp_gap": 0.0
+    },
+    {
+      "query": 1,
+      "gamma": 50.0,
+      "g_value_error": 0.0,
+      "F_value_error": 0.0,
+      "g_milp_gap": 0.0,
+      "F_milp_gap": 0.0
+    },
+    {
+      "query": 2,
+      "gamma": 0.1,
+      "g_value_error": 0.0,
+      "F_value_error": 0.0,
+      "g_milp_gap": 0.0,
+      "F_milp_gap": 0.0
+    },
+    {
+      "query": 2,
+      "gamma": 1.0,
+      "g_value_error": 0.0,
+      "F_value_error": 0.0,
+      "g_milp_gap": 0.0,
+      "F_milp_gap": 0.0
+    },
+    {
+      "query": 2,
+      "gamma": 50.0,
+      "g_value_error": 0.0,
+      "F_value_error": 0.0,
+      "g_milp_gap": 0.0,
+      "F_milp_gap": 0.0
+    }
+  ],
+  "gradient_max_absolute_error": {
+    "upper": 6.957343636751143e-12,
+    "lower": 1.4619694587012794e-11
+  },
+  "polynomial_max_absolute_error": 8.881784197001252e-16,
+  "upper_gradient_norm_at_reference": 0.007007191378777888,
+  "scope": "numerical and structural verification of the declared RC surrogate; not physical timing validation",
+  "instance_sha256": "b632134bb3d0048735ee5904f561b41a33389cdadb3e72a4cc41e407c459ab0f"
+}
